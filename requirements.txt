@@ -1,4 +1,5 @@
 groq
 python-telegram-bot
+python-telegram-bot[webhooks]
 json-repair
 google-cloud-storage
