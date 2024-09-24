@@ -288,8 +288,10 @@ def main() -> None:
     application.add_handler(CommandHandler("load", load_command))
     application.add_handler(CommandHandler("undo", undo_command))
     application.add_handler(CommandHandler("clear", clear_command))
-    application.run_webhook(listen='0.0.0.0', port=8080)
-    application.run_polling()
+    application.run_webhook(
+        listen="0.0.0.0",
+        port=8080,
+        webhook_url=os.environ['WEBHOOK_URL'])
 
 if __name__ == '__main__':
     main()
