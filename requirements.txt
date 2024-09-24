@@ -1,0 +1,4 @@
+groq
+python-telegram-bot
+json-repair
+google-cloud-storage
