@@ -290,7 +290,7 @@ def main() -> None:
     application.add_handler(CommandHandler("clear", clear_command))
     application.run_webhook(
         listen="0.0.0.0",
-        port=8080,
+        port=os.environ['PORT'],
         webhook_url=os.environ['WEBHOOK_URL'])
 
 if __name__ == '__main__':
