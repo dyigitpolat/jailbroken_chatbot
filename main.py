@@ -12,8 +12,10 @@ GROQ_TOKEN = os.environ['GROQ_API_KEY']
 
 client = Groq(api_key=GROQ_TOKEN)
 
-from google.cloud import storage
 import json
+
+from google.cloud import storage
+from google.cloud.exceptions import NotFound
 
 class CloudStorage:
     def __init__(self, bucket_name):
@@ -28,7 +30,7 @@ class CloudStorage:
         blob = self.bucket.blob(key)
         try:
             return json.loads(blob.download_as_text())
-        except storage.exceptions.NotFound:
+        except NotFound:
             raise KeyError(key)
 
     def __delitem__(self, key):
