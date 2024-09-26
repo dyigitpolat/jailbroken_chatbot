@@ -124,7 +124,7 @@ complete the json object {{ "context": {json.dumps(context)}, "user 1": {json.du
         try:
             #response = ollama.chat(model='gemma2', messages=ollama_history)
             completion = client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="llama-3.2-90b-text-preview",
                 messages=ollama_history,
                 temperature=1,
                 max_tokens=1024,
